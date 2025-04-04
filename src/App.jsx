@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
 import MainPage from './pages/MainPage'
-import ItemPage from './Pages/ItemPage'
+import ItemPage from './pages/ItemPage'
 
 const App = () => {
   return (
