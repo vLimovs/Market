@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router'
 
+import AddToCart from './UI/AddToCart';
 const ProductCard = ({ item }) => {
     return (
         <>
-            <span className="main__products-item--discount">{Math.floor(item.discountPercentage)}%</span>
+            <span className="main__products-item--discount ">{Math.floor(item.discountPercentage)}%</span>
             <div className="main__products-item--overview">
                 <img src={item.thumbnail} alt="" />
                 <div>
@@ -17,7 +18,7 @@ const ProductCard = ({ item }) => {
                 <span>${item.price}</span>
                 <div>
                     <Link to={`product/${item.id}`}>More info</Link>
-                    <Link>Add to cart</Link>
+                    <AddToCart />
                 </div>
             </div>
         </>

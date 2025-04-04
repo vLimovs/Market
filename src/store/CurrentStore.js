@@ -2,9 +2,9 @@ import { create } from "zustand";
 import axios from "axios";
 
 const CurrentStore = create((set) => ({
-    current: [],
+    current: null,
     fetchCurrent: async (id) => {
-        set({ current: [] });
+        set({ current: null });
         try {
             const url = `https://dummyjson.com/products/${id}`;
             const response = await axios.get(url);
