@@ -21,32 +21,34 @@ const MainPage = () => {
     return (
         <>
             <Header />
-            {data ? (
-                <main className="main container">
-                    <div className="main__pagination">
-                        <button disabled={page === 1} className="button" onClick={prevPage}>Назад</button>
-                        <output>Страница: №{page}</output>
-                        <button className="button" onClick={nextPage}>Вперёд</button>
-                    </div>
-                    <div className="main__dropdown">
-                        <DropDown onSortChange={setSortBy} />
-                    </div>
-                    <div className="main__products">
-                        {data.map((item, idx) => (
-                            <div className='main__products-item' key={idx}>
-                                <ProductCard item={item} />
-                            </div>
-                        ))}
-                    </div>
-                    <div className="main__pagination">
-                        <button disabled={page === 1} className="button" onClick={prevPage}>Назад</button>
-                        <output>Страница: №{page}</output>
-                        <button className="button" onClick={nextPage}>Вперёд</button>
-                    </div>
-                </main>
-            ) : (<center className='loading'>
-                <OrbitProgress color="#FFFF" size="large" text="" textColor="" />
-            </center>)}
+            <main className="main container">
+                <div className="main__pagination">
+                    <button disabled={page === 1} className="button" onClick={prevPage}>Назад</button>
+                    <output>Страница: №{page}</output>
+                    <button className="button" onClick={nextPage}>Вперёд</button>
+                </div>
+                {data ? (
+                    <>
+                        <div className="main__dropdown">
+                            <DropDown onSortChange={setSortBy} />
+                        </div>
+                        <div className="main__products">
+                            {data.map((item, idx) => (
+                                <div className='main__products-item' key={idx}>
+                                    <ProductCard item={item} />
+                                </div>
+                            ))}
+                        </div>
+                        <div className="main__pagination">
+                            <button disabled={page === 1} className="button" onClick={prevPage}>Назад</button>
+                            <output>Страница: №{page}</output>
+                            <button className="button" onClick={nextPage}>Вперёд</button>
+                        </div>
+                    </>
+                ) : (<center className='loading'>
+                    <OrbitProgress color="#FFFF" size="large" text="" textColor="" />
+                </center>)}
+            </main >
         </>
     );
 };
