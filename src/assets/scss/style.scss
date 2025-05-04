@@ -45,6 +45,7 @@ body {
 
 .container {
     max-width: 1440px;
+    margin: 15px;
     width: 100%;
     margin: auto;
     padding: 0 15px;
@@ -63,11 +64,6 @@ body {
     border: 3px solid #fff;
     border-radius: 25px;
     transition: .3s;
-
-    @media (max-width: 700px) {
-        font-size: 12px;
-        padding: 8px 25px;
-    }
 
     &:hover {
         background: #FFF;
@@ -92,43 +88,50 @@ body {
 
     &__content {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         position: relative;
 
         &-btn {
-            position: absolute;
-            left: 0;
+            @media (max-width: 600px) {
+            }
         }
 
         &-title {
+            flex-grow: 1;
             font-weight: 400;
             font-size: 72px;
             text-align: center;
             color: #fff;
             margin: 0;
 
-            @media (max-width: 500px) {
-                font-size: 25px;
-                padding: 10px 10px;
-                margin-left: 30px;
+            @media (max-width: 750px) {
+                font-size: 44px;
             }
+
         }
     }
 }
 
 .main {
     padding: 50px 0;
+
     &__pagination {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-        margin-top: 40px;
         gap: 17px;
 
-        @media (max-width: 400px) {
+        @media (max-width: 450px) {
             flex-direction: column;
+        }
+
+        .button {
+            @media (max-width: 560px) {
+                font-size: 14px;
+            }
         }
 
         output {
@@ -137,7 +140,7 @@ body {
             text-align: center;
             color: #fff;
 
-            @media (max-width: 700px) {
+            @media (max-width: 560px) {
                 font-size: 14px;
             }
         }
@@ -153,9 +156,10 @@ body {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 80px;
+        gap: 50px;
 
         &-item {
+            margin: 15px;
             position: relative;
             border-radius: 10px;
             max-width: 658px;
@@ -187,9 +191,9 @@ body {
                 overflow: hidden;
 
                 img {
-                    @media (max-width: 520px) {
-                        width: 100px;
-                        height: 100px;
+                    @media (max-width: 560px) {
+                        max-width: 40%;
+                        height: auto;
                     }
                 }
 
@@ -199,15 +203,18 @@ body {
                     color: #fff;
                     margin-top: 25px;
 
-                    @media (max-width: 700px) {
+                    @media (max-width: 550px) {
+                        font-weight: 600;
                         font-size: 18px;
                     }
+
                 }
 
                 p {
                     display: -webkit-inline-box;
-                    -webkit-line-clamp: 2;
-                    line-clamp: 2;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    line-clamp: 3;
 
                     font-weight: 400;
                     font-size: 22px;
@@ -216,12 +223,9 @@ body {
                     text-overflow: ellipsis;
                     overflow: hidden;
 
-                    @media (max-width: 700px) {
+                    @media (max-width: 550px) {
+                        font-weight: 300;
                         font-size: 14px;
-                    }
-
-                    @media (max-width: 390px) {
-                        height: 100px;
                     }
                 }
             }
@@ -229,14 +233,14 @@ body {
             &--btn {
                 display: flex;
                 justify-content: space-between;
-                flex-wrap: wrap;
                 align-items: center;
                 padding: 10px 40px;
                 gap: 15px;
-                @media (max-width: 435px) {
-                    padding: 10px 20px;
-                    flex-wrap: nowrap;
+
+                @media (max-width: 430px) {
+                    padding: 10px 10px;
                 }
+
                 span {
                     font-weight: 700;
                     font-size: 17px;
@@ -260,12 +264,16 @@ body {
                         padding: 12px 15px;
                         transition: .2s;
 
-                        &:hover {
-                            background: #0084ff;
+                        @media (max-width: 650px) {
+                            font-size: 14px;
                         }
 
-                        @media (max-width: 700px) {
-                            font-size: 14px;
+                        @media (max-width: 450px) {
+                            padding: 6px 7px;
+                        }
+
+                        &:hover {
+                            background: #0084ff;
                         }
                     }
                 }
@@ -276,8 +284,7 @@ body {
 
 .dynamic {
     .main__products-item {
-        margin-top: 50px;
-        max-width: 1440px;
+        max-width: 1400px;
         width: 100%;
         height: 100%;
 
@@ -296,10 +303,9 @@ body {
         width: 50%;
         backdrop-filter: blur(10px);
         background: rgba(30, 30, 30, 0.2);
+        width: 80%;
 
-        @media (max-width: 1000px) {
-            width: 100%;
-        }
+        @media (max-width: 1000px) {}
 
         &-slide {
             img {

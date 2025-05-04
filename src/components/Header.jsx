@@ -8,7 +8,7 @@ const Header = ({ id }) => {
                 {id && (
                     <Link className='header__content-btn button' to={'/'}>Назад</Link>
                 )}
-                <p className='header__content-title'>{id ? `Товар №${id}` : 'Products'}</p>
+                <p className='header__content-title'>{id ? `Товар №${id}` : 'Market 🛒'}</p>
             </div>
         </header>
     )
